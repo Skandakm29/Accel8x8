@@ -1,73 +1,85 @@
-// author: K M Skanda
-// email: kmskanda29@gmail.com
-// systolic_array.v
-// 8x8 systolic array of low-power MACs with hierarchical gating.
+// 8x8 systolic array (pure Verilog-2001 version)
+// - Flattened edge ports (no SV array ports)
+// - Neighbor wiring via named generate blocks.
+// Packing:
+//   activation_in_flat: rows packed, row0 in [A_W-1:0], row1 in [2*A_W-1:A_W], ...
+//   weight_in_flat:     cols packed, col0 in [W_W-1:0], col1 in [2*W_W-1:W_W], ...
+//   result_flat:        row-major, index = r*N + c
 
-`include "mac_unit.v"  // Use your enhanced mac_unit_lp_adv renamed to mac_unit
+`include "mac_unit.v"
 
 module systolic_array #(
-    parameter N = 8,              // Array dimension
-    parameter A_W = 8,            // Activation width
-    parameter W_W = 8,            // Weight width
-    parameter PSUM_W = 24         // Partial sum width
+  parameter N       = 8,
+  parameter A_W     = 8,
+  parameter W_W     = 8,
+  parameter PSUM_W  = 24
 )(
-    input  wire                        clk,
-    input  wire                        rst,
-    input  wire                        en,       // Global enable
-    input  wire [N-1:0]                row_en,   // Per-row enables
-    input  wire [N-1:0]                col_en,   // Per-column enables
-
-    // Activation input for first column (from left)
-    input  wire signed [A_W-1:0]       activation_in [0:N-1],
-    // Weight input for first row (from top)
-    input  wire signed [W_W-1:0]       weight_in [0:N-1],
-
-    // Partial sum outputs from last column (final result)
-    output wire signed [PSUM_W-1:0]    result_out [0:N-1][0:N-1]
+  input                       clk,
+  input                       rst,
+  input                       en,
+  input       [N-1:0]         row_en,
+  input       [N-1:0]         col_en,
+  input  signed [N*A_W-1:0]   activation_in_flat,
+  input  signed [N*W_W-1:0]   weight_in_flat,
+  output      [N*N*PSUM_W-1:0] result_flat
 );
 
-    // Internal signals for interconnect
-    wire signed [A_W-1:0] act_sig [0:N][0:N-1];   // One extra row for input
-    wire signed [W_W-1:0] wgt_sig [0:N-1][0:N];   // One extra col for input
-    wire signed [PSUM_W-1:0] psum_sig [0:N-1][0:N-1];
+  // Unpack left-edge activations and top-edge weights for convenience
+  wire signed [A_W-1:0] act_edge [0:N-1];
+  wire signed [W_W-1:0] wgt_edge [0:N-1];
 
-    genvar r, c;
+  genvar r, c;
+  generate
+    for (r=0; r<N; r=r+1) begin : UNPACK_A
+      localparam integer A_LO = r*A_W;
+      localparam integer A_HI = A_LO + A_W - 1;
+      assign act_edge[r] = activation_in_flat[A_HI:A_LO];
+    end
+    for (c=0; c<N; c=c+1) begin : UNPACK_W
+      localparam integer W_LO = c*W_W;
+      localparam integer W_HI = W_LO + W_W - 1;
+      assign wgt_edge[c] = weight_in_flat[W_HI:W_LO];
+    end
+  endgenerate
 
-    // Assign first column activation inputs
-    generate
-        for (r = 0; r < N; r = r + 1) begin
-            assign act_sig[0][r] = activation_in[r];
-        end
-    endgenerate
+  // Instantiate PEs and connect neighbors by hierarchical names
+  generate
+    for (c=0; c<N; c=c+1) begin : COL
+      for (r=0; r<N; r=r+1) begin : ROW
+        // Local interconnect wires
+        wire signed [A_W-1:0] act_in;
+        wire signed [W_W-1:0] wgt_in;
+        wire signed [A_W-1:0] act_out;
+        wire signed [W_W-1:0] wgt_out;
+        wire signed [PSUM_W-1:0] psum_in;
+        wire signed [PSUM_W-1:0] psum_out;
 
-    // Assign first row weight inputs
-    generate
-        for (c = 0; c < N; c = c++) begin
-            assign wgt_sig[c][0] = weight_in[c];
-        end
-    endgenerate
+        // Activation from left neighbor (or left edge for c==0)
+        if (c==0) assign act_in = act_edge[r];
+        else      assign act_in = COL[c-1].ROW[r].act_out;
 
-    // Instantiate MACs
-    generate
-        for (r = 0; r < N; r = r + 1) begin : row_loop
-            for (c = 0; c < N; c = c + 1) begin : col_loop
-                mac_unit #(.A_W(A_W), .W_W(W_W), .PSUM_W(PSUM_W)) pe (
-                    .clk(clk),
-                    .rst(rst),
-                    .en(en),
-                    .row_en(row_en[r]),
-                    .col_en(col_en[c]),
-                    .activation_in(act_sig[c][r]),   // from left neighbor or input
-                    .weight_in(wgt_sig[r][c]),       // from top neighbor or input
-                    .activation_out(act_sig[c+1][r]),
-                    .weight_out(wgt_sig[r][c+1]),
-                    .partial_sum_in((c == 0) ? {PSUM_W{1'b0}} : psum_sig[r][c-1]),
-                    .partial_sum_out(psum_sig[r][c])
-                );
+        // Weight from top neighbor (or top edge for r==0)
+        if (r==0) assign wgt_in = wgt_edge[c];
+        else      assign wgt_in = COL[c].ROW[r-1].wgt_out;
 
-                assign result_out[r][c] = psum_sig[r][c];
-            end
-        end
-    endgenerate
+        // Partial sum from left neighbor (or zero for first column)
+        if (c==0) assign psum_in = {PSUM_W{1'b0}};
+        else      assign psum_in = COL[c-1].ROW[r].psum_out;
 
+        mac_unit #(.A_W(A_W), .W_W(W_W), .PSUM_W(PSUM_W)) PE (
+          .clk(clk), .rst(rst), .en(en),
+          .row_en(row_en[r]), .col_en(col_en[c]),
+          .activation_in(act_in),   .weight_in(wgt_in),
+          .activation_out(act_out), .weight_out(wgt_out),
+          .partial_sum_in(psum_in), .partial_sum_out(psum_out)
+        );
+
+        // Pack PE result into flat row-major bus
+        localparam integer IDX  = r*N + c;
+        localparam integer P_LO = IDX*PSUM_W;
+        localparam integer P_HI = P_LO + PSUM_W - 1;
+        assign result_flat[P_HI:P_LO] = psum_out;
+      end
+    end
+  endgenerate
 endmodule
