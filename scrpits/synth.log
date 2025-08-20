@@ -1,0 +1,787 @@
+
+ /----------------------------------------------------------------------------\
+ |  yosys -- Yosys Open SYnthesis Suite                                       |
+ |  Copyright (C) 2012 - 2025  Claire Xenia Wolf <claire@yosyshq.com>         |
+ |  Distributed under an ISC-like license, type "license" to see terms        |
+ \----------------------------------------------------------------------------/
+ Yosys 0.55+8 (git sha1 9334a5c27, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+
+-- Executing script file `synth.ys' --
+
+1. Executing Verilog-2005 frontend: mac_unit.v
+Parsing Verilog input from `mac_unit.v' to AST representation.
+Generating RTLIL representation for module `\mac_unit'.
+Successfully finished Verilog frontend.
+
+2. Executing Verilog-2005 frontend: systolic_array.v
+Parsing Verilog input from `systolic_array.v' to AST representation.
+Generating RTLIL representation for module `\systolic_array'.
+Successfully finished Verilog frontend.
+
+3. Executing HIERARCHY pass (managing design hierarchy).
+
+3.1. Analyzing design hierarchy..
+Top module:  \systolic_array
+Used module:     \mac_unit
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+
+3.2. Executing AST frontend in derive mode using pre-parsed AST for module `\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Generating RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Parameter \A_W = 8
+Parameter \W_W = 8
+Parameter \PSUM_W = 24
+Found cached RTLIL representation for module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+
+3.3. Analyzing design hierarchy..
+Top module:  \systolic_array
+Used module:     $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit
+
+3.4. Analyzing design hierarchy..
+Top module:  \systolic_array
+Used module:     $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit
+Removing unused module `\mac_unit'.
+Removed 1 unused modules.
+
+4. Executing PROC pass (convert processes to netlists).
+
+4.1. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Cleaned up 0 empty switches.
+
+4.2. Executing PROC_RMDEAD pass (remove dead branches from decision trees).
+Marked 2 switch rules as full_case in process $proc$mac_unit.v:82$24 in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+Removed a total of 0 dead cases.
+
+4.3. Executing PROC_PRUNE pass (remove redundant assignments in processes).
+Removed 0 redundant assignments.
+Promoted 16 assignments to connections.
+
+4.4. Executing PROC_INIT pass (extract init attributes).
+
+4.5. Executing PROC_ARST pass (detect async resets in processes).
+
+4.6. Executing PROC_ROM pass (convert switches to ROMs).
+Converted 0 switches.
+<suppressed ~5 debug messages>
+
+4.7. Executing PROC_MUX pass (convert decision trees to multiplexers).
+Creating decoders for process `\systolic_array.$proc$systolic_array.v:0$13'.
+Creating decoders for process `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.$proc$mac_unit.v:82$24'.
+     1/5: $0\wgt_reg[7:0]
+     2/5: $0\act_reg[7:0]
+     3/5: $0\partial_sum_out[23:0]
+     4/5: $0\weight_out[7:0]
+     5/5: $0\activation_out[7:0]
+
+4.8. Executing PROC_DLATCH pass (convert process syncs to latches).
+No latch inferred for signal `\systolic_array.\act_edge[0]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\act_edge[1]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\act_edge[2]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\act_edge[3]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\act_edge[4]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\act_edge[5]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\act_edge[6]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\act_edge[7]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\wgt_edge[0]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\wgt_edge[1]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\wgt_edge[2]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\wgt_edge[3]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\wgt_edge[4]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\wgt_edge[5]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\wgt_edge[6]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+No latch inferred for signal `\systolic_array.\wgt_edge[7]' from process `\systolic_array.$proc$systolic_array.v:0$13'.
+
+4.9. Executing PROC_DFF pass (convert process syncs to FFs).
+Creating register for signal `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.\activation_out' using process `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.$proc$mac_unit.v:82$24'.
+  created $dff cell `$procdff$54' with positive edge clock.
+Creating register for signal `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.\weight_out' using process `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.$proc$mac_unit.v:82$24'.
+  created $dff cell `$procdff$55' with positive edge clock.
+Creating register for signal `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.\partial_sum_out' using process `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.$proc$mac_unit.v:82$24'.
+  created $dff cell `$procdff$56' with positive edge clock.
+Creating register for signal `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.\act_reg' using process `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.$proc$mac_unit.v:82$24'.
+  created $dff cell `$procdff$57' with positive edge clock.
+Creating register for signal `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.\wgt_reg' using process `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.$proc$mac_unit.v:82$24'.
+  created $dff cell `$procdff$58' with positive edge clock.
+
+4.10. Executing PROC_MEMWR pass (convert process memory writes to cells).
+
+4.11. Executing PROC_CLEAN pass (remove empty switches from decision trees).
+Removing empty process `systolic_array.$proc$systolic_array.v:0$13'.
+Found and cleaned up 5 empty switches in `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.$proc$mac_unit.v:82$24'.
+Removing empty process `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.$proc$mac_unit.v:82$24'.
+Cleaned up 5 empty switches.
+
+4.12. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_array.
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+<suppressed ~2 debug messages>
+
+5. Executing OPT pass (performing simple optimizations).
+
+5.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module systolic_array.
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+
+5.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_array'.
+Finding identical cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Removed a total of 0 cells.
+
+5.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module \systolic_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Running muxtree optimizer on module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Removed 0 multiplexer ports.
+<suppressed ~7 debug messages>
+
+5.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module \systolic_array.
+  Optimizing cells in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+Performed a total of 0 changes.
+
+5.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `\systolic_array'.
+Finding identical cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Removed a total of 0 cells.
+
+5.6. Executing OPT_DFF pass (perform DFF optimizations).
+Adding SRST signal on $procdff$54 ($dff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = $procmux$49_Y, Q = \activation_out, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$59 ($sdff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = \activation_in, Q = \activation_out).
+Adding SRST signal on $procdff$55 ($dff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = $procmux$44_Y, Q = \weight_out, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$61 ($sdff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = \weight_in, Q = \weight_out).
+Adding SRST signal on $procdff$56 ($dff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = $procmux$39_Y, Q = \partial_sum_out, rval = 24'000000000000000000000000).
+Adding EN signal on $auto$ff.cc:266:slice$63 ($sdff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = $procmux$39_Y, Q = \partial_sum_out).
+Adding SRST signal on $procdff$57 ($dff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = $procmux$31_Y, Q = \act_reg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$67 ($sdff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = \activation_in, Q = \act_reg).
+Adding SRST signal on $procdff$58 ($dff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = $procmux$26_Y, Q = \wgt_reg, rval = 8'00000000).
+Adding EN signal on $auto$ff.cc:266:slice$69 ($sdff) from module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit (D = \weight_in, Q = \wgt_reg).
+
+5.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module \systolic_array..
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Removed 9 unused cells and 48 unused wires.
+<suppressed ~11 debug messages>
+
+5.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+<suppressed ~1 debug messages>
+Optimizing module systolic_array.
+
+5.9. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.10. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+5.11. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+  Optimizing cells in module \systolic_array.
+Performed a total of 0 changes.
+
+5.12. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+<suppressed ~6 debug messages>
+Finding identical cells in module `\systolic_array'.
+Removed a total of 2 cells.
+
+5.13. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.14. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Finding unused cells or wires in module \systolic_array..
+
+5.15. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+Optimizing module systolic_array.
+
+5.16. Rerunning OPT passes. (Maybe there is more to do..)
+
+5.17. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+5.18. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+  Optimizing cells in module \systolic_array.
+Performed a total of 0 changes.
+
+5.19. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Finding identical cells in module `\systolic_array'.
+Removed a total of 0 cells.
+
+5.20. Executing OPT_DFF pass (perform DFF optimizations).
+
+5.21. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Finding unused cells or wires in module \systolic_array..
+
+5.22. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+Optimizing module systolic_array.
+
+5.23. Finished OPT passes. (There is nothing left to do.)
+
+6. Executing FSM pass (extract and optimize FSM).
+
+6.1. Executing FSM_DETECT pass (finding FSMs in design).
+
+6.2. Executing FSM_EXTRACT pass (extracting FSM from design).
+
+6.3. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.4. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Finding unused cells or wires in module \systolic_array..
+
+6.5. Executing FSM_OPT pass (simple optimizations of FSMs).
+
+6.6. Executing FSM_RECODE pass (re-assigning FSM state encoding).
+
+6.7. Executing FSM_INFO pass (dumping all available information on FSM cells).
+
+6.8. Executing FSM_MAP pass (mapping FSMs to basic logic).
+
+7. Executing OPT pass (performing simple optimizations).
+
+7.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+Optimizing module systolic_array.
+
+7.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Finding identical cells in module `\systolic_array'.
+Removed a total of 0 cells.
+
+7.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+7.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+  Optimizing cells in module \systolic_array.
+Performed a total of 0 changes.
+
+7.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Finding identical cells in module `\systolic_array'.
+Removed a total of 0 cells.
+
+7.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+7.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Finding unused cells or wires in module \systolic_array..
+
+7.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+Optimizing module systolic_array.
+
+7.9. Finished OPT passes. (There is nothing left to do.)
+
+8. Executing MEMORY pass.
+
+8.1. Executing OPT_MEM pass (optimize memories).
+Performed a total of 0 transformations.
+
+8.2. Executing OPT_MEM_PRIORITY pass (removing unnecessary memory write priority relations).
+Performed a total of 0 transformations.
+
+8.3. Executing OPT_MEM_FEEDBACK pass (finding memory read-to-write feedback paths).
+
+8.4. Executing MEMORY_BMUX2ROM pass (converting muxes to ROMs).
+
+8.5. Executing MEMORY_DFF pass (merging $dff cells to $memrd).
+
+8.6. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Finding unused cells or wires in module \systolic_array..
+
+8.7. Executing MEMORY_SHARE pass (consolidating $memrd/$memwr cells).
+
+8.8. Executing OPT_MEM_WIDEN pass (optimize memories where all ports are wide).
+Performed a total of 0 transformations.
+
+8.9. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Finding unused cells or wires in module \systolic_array..
+
+8.10. Executing MEMORY_COLLECT pass (generating $mem cells).
+
+8.11. Executing MEMORY_MAP pass (converting memories to logic and flip-flops).
+
+9. Executing OPT pass (performing simple optimizations).
+
+9.1. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+Optimizing module systolic_array.
+
+9.2. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Finding identical cells in module `\systolic_array'.
+Removed a total of 0 cells.
+
+9.3. Executing OPT_MUXTREE pass (detect dead branches in mux trees).
+Running muxtree optimizer on module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+  Creating internal representation of mux trees.
+  Evaluating internal representation of mux trees.
+  Analyzing evaluation results.
+Running muxtree optimizer on module \systolic_array..
+  Creating internal representation of mux trees.
+  No muxes found in this module.
+Removed 0 multiplexer ports.
+<suppressed ~3 debug messages>
+
+9.4. Executing OPT_REDUCE pass (consolidate $*mux and $reduce_* inputs).
+  Optimizing cells in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+  Optimizing cells in module \systolic_array.
+Performed a total of 0 changes.
+
+9.5. Executing OPT_MERGE pass (detect identical cells).
+Finding identical cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Finding identical cells in module `\systolic_array'.
+Removed a total of 0 cells.
+
+9.6. Executing OPT_DFF pass (perform DFF optimizations).
+
+9.7. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Finding unused cells or wires in module \systolic_array..
+
+9.8. Executing OPT_EXPR pass (perform const folding).
+Optimizing module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit.
+Optimizing module systolic_array.
+
+9.9. Finished OPT passes. (There is nothing left to do.)
+
+10. Executing Liberty frontend: /home/skanda/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+Imported 428 cell types from liberty file.
+
+11. Executing DFFLIBMAP pass (mapping DFF cells to sequential cells from liberty file).
+  cell sky130_fd_sc_hd__dfxtp_1 (noninv, pins=3, area=20.02) is a direct match for cell type $_DFF_P_.
+  cell sky130_fd_sc_hd__dfrtn_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_NN0_.
+  cell sky130_fd_sc_hd__dfrtp_1 (noninv, pins=4, area=25.02) is a direct match for cell type $_DFF_PN0_.
+  cell sky130_fd_sc_hd__dfstp_2 (noninv, pins=4, area=26.28) is a direct match for cell type $_DFF_PN1_.
+  cell sky130_fd_sc_hd__edfxtp_1 (noninv, pins=4, area=30.03) is a direct match for cell type $_DFFE_PP_.
+  cell sky130_fd_sc_hd__dfbbn_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_NNN_.
+  cell sky130_fd_sc_hd__dfbbp_1 (noninv, pins=6, area=32.53) is a direct match for cell type $_DFFSR_PNN_.
+  final dff cell mappings:
+    unmapped dff cell: $_DFF_N_
+    \sky130_fd_sc_hd__dfxtp_1 _DFF_P_ (.CLK( C), .D( D), .Q( Q));
+    \sky130_fd_sc_hd__dfrtn_1 _DFF_NN0_ (.CLK_N( C), .D( D), .Q( Q), .RESET_B( R));
+    unmapped dff cell: $_DFF_NN1_
+    unmapped dff cell: $_DFF_NP0_
+    unmapped dff cell: $_DFF_NP1_
+    \sky130_fd_sc_hd__dfrtp_1 _DFF_PN0_ (.CLK( C), .D( D), .Q( Q), .RESET_B( R));
+    \sky130_fd_sc_hd__dfstp_2 _DFF_PN1_ (.CLK( C), .D( D), .Q( Q), .SET_B( R));
+    unmapped dff cell: $_DFF_PP0_
+    unmapped dff cell: $_DFF_PP1_
+    unmapped dff cell: $_DFFE_NN_
+    unmapped dff cell: $_DFFE_NP_
+    unmapped dff cell: $_DFFE_PN_
+    \sky130_fd_sc_hd__edfxtp_1 _DFFE_PP_ (.CLK( C), .D( D), .DE( E), .Q( Q));
+    \sky130_fd_sc_hd__dfbbn_1 _DFFSR_NNN_ (.CLK_N( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_NNP_
+    unmapped dff cell: $_DFFSR_NPN_
+    unmapped dff cell: $_DFFSR_NPP_
+    \sky130_fd_sc_hd__dfbbp_1 _DFFSR_PNN_ (.CLK( C), .D( D), .Q( Q), .Q_N(~Q), .RESET_B( R), .SET_B( S));
+    unmapped dff cell: $_DFFSR_PNP_
+    unmapped dff cell: $_DFFSR_PPN_
+    unmapped dff cell: $_DFFSR_PPP_
+
+11.1. Executing DFFLEGALIZE pass (convert FFs to types supported by the target).
+<suppressed ~24 debug messages>
+Mapping DFF cells in module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit':
+Mapping DFF cells in module `\systolic_array':
+
+12. Executing ABC pass (technology mapping using ABC).
+
+12.1. Extracting gate netlist of module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+12.2. Extracting gate netlist of module `\systolic_array' to `<abc-temp-dir>/input.blif'..
+Extracted 0 gates and 0 wires to a netlist network with 0 inputs and 0 outputs.
+Don't call ABC as there is nothing to map.
+Removing temp directory.
+
+13. Executing OPT_CLEAN pass (remove unused cells and wires).
+Finding unused cells or wires in module $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit..
+Finding unused cells or wires in module \systolic_array..
+Removed 0 unused cells and 211 unused wires.
+<suppressed ~211 debug messages>
+
+14. Printing statistics.
+
+=== $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit ===
+
+   Number of wires:                 25
+   Number of wire bits:            197
+   Number of public wires:          18
+   Number of public wire bits:     121
+   Number of ports:                 11
+   Number of port bits:             85
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 17
+     $add                            1
+     $and                            3
+     $logic_not                      2
+     $mul                            1
+     $mux                            4
+     $not                            1
+     $or                             1
+     $reduce_bool                    1
+     $sdffe                          3
+
+   Area for cell type $not is unknown!
+   Area for cell type $reduce_bool is unknown!
+   Area for cell type $logic_not is unknown!
+   Area for cell type $and is unknown!
+   Area for cell type $or is unknown!
+   Area for cell type $add is unknown!
+   Area for cell type $mul is unknown!
+   Area for cell type $mux is unknown!
+   Area for cell type $sdffe is unknown!
+
+=== systolic_array ===
+
+   Number of wires:                200
+   Number of wire bits:           4243
+   Number of public wires:         200
+   Number of public wire bits:    4243
+   Number of ports:                  8
+   Number of port bits:           1683
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:                 64
+     $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit     64
+
+   Area for cell type $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit is unknown!
+
+=== design hierarchy ===
+
+   systolic_array                    1
+     $paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit     64
+
+   Number of wires:               1800
+   Number of wire bits:          16851
+   Number of public wires:        1352
+   Number of public wire bits:   11987
+   Number of ports:                712
+   Number of port bits:           7123
+   Number of memories:               0
+   Number of memory bits:            0
+   Number of processes:              0
+   Number of cells:               1088
+     $add                           64
+     $and                          192
+     $logic_not                    128
+     $mul                           64
+     $mux                          256
+     $not                           64
+     $or                            64
+     $reduce_bool                   64
+     $sdffe                        192
+
+   Area for cell type $not is unknown!
+   Area for cell type $reduce_bool is unknown!
+   Area for cell type $logic_not is unknown!
+   Area for cell type $and is unknown!
+   Area for cell type $or is unknown!
+   Area for cell type $add is unknown!
+   Area for cell type $mul is unknown!
+   Area for cell type $mux is unknown!
+   Area for cell type $sdffe is unknown!
+
+15. Executing Verilog backend.
+
+15.1. Executing BMUXMAP pass.
+
+15.2. Executing DEMUXMAP pass.
+Dumping module `$paramod$966773a7c3bc91e471672006b4d6600f62b050ab\mac_unit'.
+Dumping module `\systolic_array'.
+
+End of script. Logfile hash: d4b9140c3e, CPU: user 0.23s system 0.01s, MEM: 48.86 MB peak
+Yosys 0.55+8 (git sha1 9334a5c27, g++ 11.4.0-1ubuntu1~22.04 -fPIC -O3)
+Time spent: 17% 1x dfflibmap (0 sec), 17% 9x opt_clean (0 sec), ...
