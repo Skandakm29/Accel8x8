@@ -5,9 +5,23 @@
 //   activation_in_flat: rows packed, row0 in [A_W-1:0], row1 in [2*A_W-1:A_W], ...
 //   weight_in_flat:     cols packed, col0 in [W_W-1:0], col1 in [2*W_W-1:W_W], ...
 //   result_flat:        row-major, index = r*N + c
+// Systolic array module
+// - N: number of rows/columns (square array)
+// - A_W: activation width (signed)
+// - W_W: weight width (signed)
+// - PSUM_W: partial-sum width (signed)
+// - clk: clock signal
+// - rst: synchronous reset (active-high)
+// - en: enable signal for the entire array
+// - row_en: per-row enable signals (N bits)
+// - col_en: per-column enable signals (N bits)
+// - activation_in_flat: flattened input for activations (N*A_W bits)
+// - weight_in_flat: flattened input for weights (N*W_W bits)
+// - result_flat: flattened output for results (N*N*PSUM_W bits)
+// - The array computes the matrix multiplication of activations and weights
+//   and outputs the results in a flattened format.
 
-`include "mac_unit.v"
-
+`default_nettype none
 module systolic_array #(
   parameter N       = 8,
   parameter A_W     = 8,
@@ -78,6 +92,7 @@ module systolic_array #(
         localparam integer IDX  = r*N + c;
         localparam integer P_LO = IDX*PSUM_W;
         localparam integer P_HI = P_LO + PSUM_W - 1;
+        // Assign the output to the flattened result bus
         assign result_flat[P_HI:P_LO] = psum_out;
       end
     end

@@ -1,0 +1,19 @@
+# --- Read RTL
+read_verilog mac_unit.v
+read_verilog systolic_array.v
+hierarchy -top systolic_array
+
+# --- Generic synthesis
+proc; opt; fsm; opt; memory; opt
+
+# --- Read Liberty and map to Sky130 HD cells
+read_liberty -lib /home/skanda/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+dfflibmap -liberty /home/skanda/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+abc        -liberty /home/skanda/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib -D 10000
+
+# --- Clean and report
+opt_clean -purge
+stat -liberty /home/skanda/.volare/volare/sky130/versions/bdc9412b3e468c102d01b7cf6337be06ec6e9c9a/sky130A/libs.ref/sky130_fd_sc_hd/lib/sky130_fd_sc_hd__tt_025C_1v80.lib
+
+# --- Write mapped netlist
+write_verilog systolic_array_synth.v
